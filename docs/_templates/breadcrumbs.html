@@ -1,0 +1,15 @@
+{%- extends "theme/breadcrumbs.html" %}
+
+{% block breadcrumbs %}
+      <li><a href="https://books.agiliq.com/">{{ _('Books') }}</a> &raquo;</li>
+      <li><a href="{{ pathto(master_doc) }}">{{ _('Cookbook') }}</a> &raquo;</li>
+        {% for doc in parents %}
+          <li><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
+        {% endfor %}
+      <li>{{ title }}</li>
+    {% endblock %}
+
+
+{% block breadcrumbs_aside %}
+    <a href="mailto:custom@mail.com" target="_blank" class="btn contact-top">custom@mail.com</a>
+{% endblock %}
